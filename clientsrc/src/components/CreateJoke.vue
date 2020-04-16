@@ -19,6 +19,7 @@
       />
     </div>
     <button type="button" class="btn btn-primary" @click="addJoke()">Add Joke</button>
+    <button type="button" class="btn btn-primary" @click="findMyJokes()">My Jokes</button>
   </div>
 </template>
 
@@ -37,6 +38,10 @@ export default {
     addJoke() {
       this.$store.dispatch("addJoke", this.newJoke);
       this.newJoke = {};
+    },
+    findMyJokes(){
+      this.$store.dispatch("getMyJokes");
+
     }
   },
   components: {}

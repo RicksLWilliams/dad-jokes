@@ -59,6 +59,16 @@ export default new Vuex.Store({
       } catch (error) {
         console.error(error)
       }
+    },
+
+    async getMyJokes({ commit, dispatch }) {
+      try {
+        console.log( this.state.profile)
+        let res = await api.get('jokes', )
+        commit('setJokes', res.data)
+      } catch (error) {
+        console.error(error)
+      }
     }
   }
 });
